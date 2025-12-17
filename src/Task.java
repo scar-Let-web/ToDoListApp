@@ -2,7 +2,7 @@ public class Task implements Comparable<Task> {
 
     public enum Status {
         NOT_STARTED,
-        MARKED_AS_DONE,
+        IN_PROGRESS,
         DONE
     }
 
@@ -48,7 +48,7 @@ public class Task implements Comparable<Task> {
         String symbol;
         switch (status) {
             case NOT_STARTED: symbol = "○"; break;
-            case MARKED_AS_DONE: symbol = "◐"; break;
+            case IN_PROGRESS: symbol = "◐"; break;
             case DONE: symbol = "✔"; break;
             default: symbol = "";
         }

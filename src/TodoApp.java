@@ -48,7 +48,7 @@ public class TodoApp extends JFrame {
         JPanel actions = new JPanel();
 
         JComboBox<String> statusBox = new JComboBox<>(new String[]{
-                "Not Yet Started", "Mark as Done", "Done"
+                "Not Yet Started", "In Progress", "Done"
         });
 
         JButton applyStatusBtn = new JButton("Apply Status");
@@ -61,8 +61,6 @@ public class TodoApp extends JFrame {
         add(tabs, BorderLayout.CENTER);
         add(input, BorderLayout.NORTH);
         add(actions, BorderLayout.SOUTH);
-
-        // ===== BUTTON LOGIC =====
 
         addBtn.addActionListener(e -> {
             String title = taskField.getText().trim();
@@ -84,8 +82,8 @@ public class TodoApp extends JFrame {
                     case "Not Yet Started":
                         selected.setStatus(Task.Status.NOT_STARTED);
                         break;
-                    case "Mark as Done":
-                        selected.setStatus(Task.Status.MARKED_AS_DONE);
+                    case "In Progress":
+                        selected.setStatus(Task.Status.IN_PROGRESS);
                         break;
                     case "Done":
                         selected.setStatus(Task.Status.DONE);

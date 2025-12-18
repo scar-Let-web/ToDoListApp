@@ -38,7 +38,7 @@ public class Task implements Comparable<Task> {
         this.status = status;
     }
 
-    @Override
+    @Override //Task overrides compareTo() - Comparable
     public int compareTo(Task other) {
         return Integer.compare(this.priority, other.priority);
     }
@@ -55,7 +55,6 @@ public class Task implements Comparable<Task> {
         return symbol + " (" + priority + ") " + title;
     }
 
-    // ===== FILE PERSISTENCE =====
     public String toFileString() {
         return title + "|" + category + "|" + priority + "|" + status;
     }
@@ -74,4 +73,5 @@ public class Task implements Comparable<Task> {
         task.setStatus(Status.valueOf(parts[3]));
         return task;
     }
+
 }

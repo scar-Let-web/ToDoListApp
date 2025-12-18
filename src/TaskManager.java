@@ -5,11 +5,11 @@ public class TaskManager {
 
     private List<Task> tasks = new ArrayList<>();
 
-    public TaskManager() {
+    public TaskManager() {//auto load task when application starts
         loadTasks();
     }
 
-    public void addTask(Task task) {
+    public void addTask(Task task) { //auto update added tasks
         tasks.add(task);
         saveTasks();
     }
@@ -33,4 +33,5 @@ public class TaskManager {
     public void loadTasks() {
         TaskFileHandler.load(tasks);
     }
+
 }
